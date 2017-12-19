@@ -1,0 +1,123 @@
+<html lang="pl">
+    <head>
+        <link rel="stylesheet" type="text/css" href="kalkulatorstyle.css">
+    </head>
+
+    <body>
+        <div id="container">
+                <form action="/zad2.html">
+            <div id="wynik">
+                <input type="number" id="wynik1" value="0">
+
+            </div>
+            <div id="przyciski">
+                    <button id="wartosc1" value="1" type="button">1</button>
+                    <button id="wartosc2" value="2" type="button">2</button>
+                    <button id="wartosc3" value="3" type="button">3</button>
+                    <button id="wartosc4" value="4" type="button">4</button>
+                    <button id="wartosc5" value="5" type="button">5</button>
+                    <button id="wartosc6" value="6" type="button">6</button>
+                    <button id="wartosc7" value="7" type="button">7</button>
+                    <button id="wartosc8" value="8" type="button">8</button>
+                    <button id="wartosc9" value="9" type="button">9</button>
+                    <button id="wartosc0" value="0" type="button">0</button>
+                    <button type="button" id="+" onclick="dodaj()">+</button>
+                    <button type="button" id="-" onclick="odejmij()">-</button>
+                    <button type="button" id="*" onclick="mnoz()">*</button>
+                    <button type="button" id="/" onclick="dziel()">/</button>
+                    <input id="reset" type="reset" value="C"/>
+                    <button type="button" id="rownasie" onclick="wynikk()">=</button>
+                
+            </div>
+        </form>
+        </div>
+
+    </body>
+
+    <script>
+        var x1 = document.getElementById("wartosc1");
+        var x2 = document.getElementById("wartosc2");
+        var x3 = document.getElementById("wartosc3");
+        var x4 = document.getElementById("wartosc4");
+        var x5 = document.getElementById("wartosc5");
+        var x6 = document.getElementById("wartosc6");
+        var x7 = document.getElementById("wartosc7");
+        var x8 = document.getElementById("wartosc8");
+        var x9 = document.getElementById("wartosc9");
+        var x0 = document.getElementById("wartosc0");
+        x1.addEventListener("click",wypisz);
+        x2.addEventListener("click",wypisz);
+        x3.addEventListener("click",wypisz);
+        x4.addEventListener("click",wypisz);
+        x5.addEventListener("click",wypisz);
+        x6.addEventListener("click",wypisz);
+        x7.addEventListener("click",wypisz);
+        x8.addEventListener("click",wypisz);
+        x9.addEventListener("click",wypisz);
+        x0.addEventListener("click",wypisz);
+       
+
+        function zamiana() {
+            
+           
+            wypisz("value1");
+
+        }
+        function wypisz(wypisz) {
+            var elementvalue=wypisz.target.value;
+            var value1=parseInt(elementvalue);
+            var x = document.getElementById("wynik1");
+        
+        
+            var parsx = parseInt(x.value);
+            x.value=(parsx*10)+value1;
+            //(1*10)+2=(12*10)+5=(125*10)+6=1256
+            var element1value=wypisz.target.id;
+
+
+        
+        }
+    var result;
+    function dodaj(){
+        operation = "+";
+        firstnumber=parseInt(document.getElementById("wynik1").value);
+        document.getElementById("wynik1").value="0"
+    };
+    function odejmij(){
+        operation = "-";
+        firstnumber=parseInt(document.getElementById("wynik1").value);
+        document.getElementById("wynik1").value="0"
+    };
+    function mnoz(){
+        operation = "*";
+        firstnumber=parseInt(document.getElementById("wynik1").value);
+        document.getElementById("wynik1").value="0"
+    };
+    function dziel(){
+        operation = "/";
+        firstnumber=parseInt(document.getElementById("wynik1").value);
+        document.getElementById("wynik1").value="0"
+    }
+    function wynikk(){
+        secondnumber=parseInt(document.getElementById("wynik1").value);
+        if (operation == "+")
+        {result=firstnumber+secondnumber
+        document.getElementById("wynik1").value=result}
+        else if (operation == "-")
+        {result=firstnumber-secondnumber
+        document.getElementById("wynik1").value=result}
+        else if (operation == "*")
+        {result=firstnumber*secondnumber
+        document.getElementById("wynik1").value=result}
+        else if (operation == "/")
+        {result=firstnumber/secondnumber
+        document.getElementById("wynik1").value=result}
+    }
+        
+    </script>
+
+
+</body>
+
+
+</html>

@@ -1,0 +1,60 @@
+#container {
+    height:460px;
+    width:250px;
+    border-radius:5px;
+
+
+
+}
+
+#wynik {
+    height:80px;
+    width:250px;
+    border-radius:5px;
+    border: solid black 2px;
+}
+
+#przyciski {
+    height:380px;
+    width:250px;
+    background-color:rgb(245, 170, 227);
+    border-radius:5px;
+    border: solid black 2px;
+}
+
+#wynik1 {
+
+    height:100%;
+    width:100%;
+    font-size:50px;  
+}
+button {
+    height:60px;
+    width:60px;
+    border-radius:10px;
+    margin-left:15px;
+    margin-top:2px;
+    border: solid black 2px;
+    background-color:rgb(192, 133, 174);
+    font-size:25px;
+}
+button:hover {
+    background-color:rgb(199, 177, 192);
+}
+#reset {
+    height:60px;
+    width:60px;
+    border-radius:10px;
+    margin-left:15px;
+    margin-top:2px;
+    border: solid black 2px; 
+    background-color:rgb(192, 133, 174);  
+    font-size:25px;    
+}
+#reset:hover {
+    background-color:rgb(199, 177, 192);
+}
+#rownasie {
+    height:60px;
+    width:217px;
+}
