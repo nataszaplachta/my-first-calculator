@@ -7,14 +7,14 @@
 
 }
 
-#wynik {
+#result {
     height:80px;
     width:250px;
     border-radius:5px;
     border: solid black 2px;
 }
 
-#przyciski {
+#buttons {
     height:380px;
     width:250px;
     background-color:rgb(245, 170, 227);
@@ -22,7 +22,7 @@
     border: solid black 2px;
 }
 
-#wynik1 {
+#result1 {
 
     height:100%;
     width:100%;
@@ -54,7 +54,7 @@ button:hover {
 #reset:hover {
     background-color:rgb(199, 177, 192);
 }
-#rownasie {
+#equals {
     height:60px;
-    width:217px;
+    width:140px;
 }

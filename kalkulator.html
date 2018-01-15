@@ -5,28 +5,30 @@
 
     <body>
         <div id="container">
-                <form action="/zad2.html">
-            <div id="wynik">
-                <input type="number" id="wynik1" value="0">
+                <form action="/kalkulator.html">
+            <div id="result">
+                <input type="text" id="result1" value="0">
 
             </div>
-            <div id="przyciski">
-                    <button id="wartosc1" value="1" type="button">1</button>
-                    <button id="wartosc2" value="2" type="button">2</button>
-                    <button id="wartosc3" value="3" type="button">3</button>
-                    <button id="wartosc4" value="4" type="button">4</button>
-                    <button id="wartosc5" value="5" type="button">5</button>
-                    <button id="wartosc6" value="6" type="button">6</button>
-                    <button id="wartosc7" value="7" type="button">7</button>
-                    <button id="wartosc8" value="8" type="button">8</button>
-                    <button id="wartosc9" value="9" type="button">9</button>
-                    <button id="wartosc0" value="0" type="button">0</button>
-                    <button type="button" id="+" onclick="dodaj()">+</button>
-                    <button type="button" id="-" onclick="odejmij()">-</button>
-                    <button type="button" id="*" onclick="mnoz()">*</button>
-                    <button type="button" id="/" onclick="dziel()">/</button>
+            <div id="buttons">
+                    <button id="value1" value="1" type="button">1</button>
+                    <button id="value2" value="2" type="button">2</button>
+                    <button id="value3" value="3" type="button">3</button>
+                    <button id="value4" value="4" type="button">4</button>
+                    <button id="value5" value="5" type="button">5</button>
+                    <button id="value6" value="6" type="button">6</button>
+                    <button id="value7" value="7" type="button">7</button>
+                    <button id="value8" value="8" type="button">8</button>
+                    <button id="value9" value="9" type="button">9</button>
+                    <button id="value0" value="0" type="button">0</button>
+                    <!-- <button type="button" id="dot" onclick="point()">.</button> -->
+                    <button type="button" id="+" onclick="add()">+</button>
+                    <button type="button" id="-" onclick="subtract()">-</button>
+                    <button type="button" id="*" onclick="multiply()">*</button>
+                    <button type="button" id="/" onclick="divide()">/</button>
+                    <button type="button" id="+/-" onclick="changecharacter()">+/-</button>
                     <input id="reset" type="reset" value="C"/>
-                    <button type="button" id="rownasie" onclick="wynikk()">=</button>
+                    <button type="button" id="equals" onclick="results()">=</button>
                 
             </div>
         </form>
@@ -35,85 +37,104 @@
     </body>
 
     <script>
-        var x1 = document.getElementById("wartosc1");
-        var x2 = document.getElementById("wartosc2");
-        var x3 = document.getElementById("wartosc3");
-        var x4 = document.getElementById("wartosc4");
-        var x5 = document.getElementById("wartosc5");
-        var x6 = document.getElementById("wartosc6");
-        var x7 = document.getElementById("wartosc7");
-        var x8 = document.getElementById("wartosc8");
-        var x9 = document.getElementById("wartosc9");
-        var x0 = document.getElementById("wartosc0");
-        x1.addEventListener("click",wypisz);
-        x2.addEventListener("click",wypisz);
-        x3.addEventListener("click",wypisz);
-        x4.addEventListener("click",wypisz);
-        x5.addEventListener("click",wypisz);
-        x6.addEventListener("click",wypisz);
-        x7.addEventListener("click",wypisz);
-        x8.addEventListener("click",wypisz);
-        x9.addEventListener("click",wypisz);
-        x0.addEventListener("click",wypisz);
+        var operation;
+        var x1 = document.getElementById("value1");
+        var x2 = document.getElementById("value2");
+        var x3 = document.getElementById("value3");
+        var x4 = document.getElementById("value4");
+        var x5 = document.getElementById("value5");
+        var x6 = document.getElementById("value6");
+        var x7 = document.getElementById("value7");
+        var x8 = document.getElementById("value8");
+        var x9 = document.getElementById("value9");
+        var x0 = document.getElementById("value0");
+        var xdot = document.getElementById("dot");
+        x1.addEventListener("click",write);
+        x2.addEventListener("click",write);
+        x3.addEventListener("click",write);
+        x4.addEventListener("click",write);
+        x5.addEventListener("click",write);
+        x6.addEventListener("click",write);
+        x7.addEventListener("click",write);
+        x8.addEventListener("click",write);
+        x9.addEventListener("click",write);
+        x0.addEventListener("click",write);
+        xdot.addEventListener("click",write);
        
 
         function zamiana() {
             
            
-            wypisz("value1");
+            write("values");
 
         }
-        function wypisz(wypisz) {
-            var elementvalue=wypisz.target.value;
-            var value1=parseInt(elementvalue);
-            var x = document.getElementById("wynik1");
+        function write(write) {
+            var elementvalue=write.target.value;
+            var values=parseFloat(elementvalue);
+            var x = document.getElementById("result1");
         
         
-            var parsx = parseInt(x.value);
-            x.value=(parsx*10)+value1;
+            var parsx = parseFloat(x.value);
+            x.value=(parsx*10)+values;
             //(1*10)+2=(12*10)+5=(125*10)+6=1256
-            var element1value=wypisz.target.id;
+            var element1value=write.target.id;
 
 
         
         }
     var result;
-    function dodaj(){
+    function add(){
         operation = "+";
-        firstnumber=parseInt(document.getElementById("wynik1").value);
-        document.getElementById("wynik1").value="0"
+        firstnumber=parseInt(document.getElementById("result1").value);
+        document.getElementById("result1").value="0"
     };
-    function odejmij(){
+    function subtract(){
         operation = "-";
-        firstnumber=parseInt(document.getElementById("wynik1").value);
-        document.getElementById("wynik1").value="0"
+        firstnumber=parseInt(document.getElementById("result1").value);
+        document.getElementById("result1").value="0"
     };
-    function mnoz(){
+    function multiply(){
         operation = "*";
-        firstnumber=parseInt(document.getElementById("wynik1").value);
-        document.getElementById("wynik1").value="0"
+        firstnumber=parseInt(document.getElementById("result1").value);
+        document.getElementById("result1").value="0"
     };
-    function dziel(){
+    function divide(){
         operation = "/";
-        firstnumber=parseInt(document.getElementById("wynik1").value);
-        document.getElementById("wynik1").value="0"
+        firstnumber=parseInt(document.getElementById("result1").value);
+        document.getElementById("result1").value="0"
     }
-    function wynikk(){
-        secondnumber=parseInt(document.getElementById("wynik1").value);
+  
+    function results(){
+        secondnumber=parseInt(document.getElementById("result1").value);
         if (operation == "+")
         {result=firstnumber+secondnumber
-        document.getElementById("wynik1").value=result}
+        document.getElementById("result1").value=result}
         else if (operation == "-")
         {result=firstnumber-secondnumber
-        document.getElementById("wynik1").value=result}
+        document.getElementById("result1").value=result}
         else if (operation == "*")
         {result=firstnumber*secondnumber
-        document.getElementById("wynik1").value=result}
+        document.getElementById("result1").value=result}
         else if (operation == "/")
         {result=firstnumber/secondnumber
-        document.getElementById("wynik1").value=result}
+        document.getElementById("result1").value=result}
     }
-        
+    function changecharacter(){
+        var result2 = document.getElementById("result1");
+        var x = parseInt(document.getElementById("result1").value);
+        x = x*(-1);
+        result2.value=x;
+    };
+    function point(){
+        operation="."
+        var result2=parseFloat(document.getElementById("result1").value)
+        if (operation=".")
+        {
+        result=result2+".";
+        var parseresult=parseFloat(result)
+        document.getElementById("result1").value=result;
+        } 
+    };
     </script>
 
 
